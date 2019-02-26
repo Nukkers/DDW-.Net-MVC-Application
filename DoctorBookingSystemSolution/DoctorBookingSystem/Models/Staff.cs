@@ -13,12 +13,7 @@ namespace DoctorBookingSystem.Models
         public string Role { get; set; }
         public Boolean Admin { get; set; }
         public string Surgery { get; set; }
+
+        public List<Appointment> Appointments { get; set; }
     }
-
-    public class StaffDBContext : DbContext
-    {
-        public DbSet<Staff> StaffMembers { get; set; }
-    }
-
-
 }

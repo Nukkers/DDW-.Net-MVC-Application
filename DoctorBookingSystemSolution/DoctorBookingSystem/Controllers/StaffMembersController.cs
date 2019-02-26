@@ -12,7 +12,7 @@ namespace DoctorBookingSystem.Controllers
 {
     public class StaffMembersController : Controller
     {
-        private StaffDBContext db = new StaffDBContext();
+        private DBSContext db = new DBSContext();
 
         // GET: StaffMembers
         public ActionResult Index()

@@ -1,0 +1,28 @@
+﻿@model DBS_v1.ViewModels.UserLoginVM
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+@Html.Encode(ViewData["Message"])
+<div>
+    @using (@Html.BeginForm("CheckUserExists", "User", FormMethod.Post))
+    {
+        <fieldset>
+            <div>
+                @Html.LabelFor(u => u.Username)
+                @Html.ValidationMessageFor(u => u.Username)
+                @Html.EditorFor(u => u.Username)
+            </div>
+            <div>
+                @Html.LabelFor(u => u.Password)
+                @Html.ValidationMessageFor(u => u.Password)
+                @Html.EditorFor(u => u.Password)
+            </div>
+            <input type="submit" value="Submit" />
+        </fieldset>
+    }
+    @{ Html.EndForm();}
+</div>

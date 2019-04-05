@@ -1,0 +1,30 @@
+﻿@model DBS_v1.Models.User
+@{
+    ViewBag.Title = "Create User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create New User</h2>
+
+<div>
+    @using (Html.BeginForm("CreateUser", "User", FormMethod.Post))
+    {
+        <fieldset>
+            <div>
+                @Html.LabelFor(u => u.Username)
+                @Html.EditorFor(u => u.Username)
+            </div>
+            <div>
+                @Html.LabelFor(u => u.Email_Address)
+                @Html.EditorFor(u => u.Email_Address)
+            </div>
+            <div>
+                @Html.LabelFor(u => u.Password)
+                @Html.EditorFor(u => u.Password)
+            </div>
+            <input type="submit" value="Submit"/>
+        </fieldset>
+    }
+    @{Html.EndForm();}
+</div>
+

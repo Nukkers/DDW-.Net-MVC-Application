@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "DisplayUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Users</h2>
+<table>
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            Email
+        </th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.Encode(item.Username)
+            </td>
+            <td>
+                @Html.Encode(item.Email_Address)
+            </td>
+        </tr>
+    }
+</table>
